@@ -41,13 +41,15 @@ devnotes: >
 
 Which will give you something [like this](http://koded.github.io/htmldoc-example-bootstrap/components-theme-buttons.html).
 
+The comment is placed adjacent (in DOM terms) to the element that contains the component you wish to include in the style guide.
+
 The annotations are written in Yaml format, and the field values support markdown.
 
 ***
 
 ## Motivation
 
-There have been a number of attempts at creating living style guides and pattern libraries.  Many however have not overcome the requirement to copy chunks of HTML into the style guide, the issue being that the markup now needs to be maintained in the style guide itself, and the projects in which it is used.
+There have been a number of attempts at creating living style guides and pattern libraries.  Many however have not overcome the requirement to copy chunks of HTML into the style guide, the issue being that the markup now needs to be maintained in the style guide itself, and the project in which it is used.
 
 The main motivation behind the creation of HTMLDoc is to:
 
@@ -82,15 +84,15 @@ For options:
 - Checkout an example styleguide wrapper at https://github.com/Koded/htmldoc-bootstrap-styleguide-theme
 - Add HTMLDoc comments to your code
 - Create a `htmldoc.yaml` configuration file (yet to be documented see [here](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/htmldoc.yaml) for an example)
-- Run htmldoc on the command line, from the same directory as the `htmldoc.yaml` file
+- Run `htmldoc` on the command line, from the same directory as the `htmldoc.yaml` file
 
-The built styleguide will be placed in the `./publish` folder.
+The built styleguide will be placed in a `./publish` folder.
 
 # HTMLDoc Comment Annotations
 
 With the exception of a set of reserved field names, HTMLDoc annotations are schemaless, i.e. they can have varying numbers of fields, and different types for each field.
 
-All non-reserved fields are made available within the [`pattern.hbs`](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/styleguide/pattern.hbs) template, for example:
+All fields are made available within the [`pattern.hbs`](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/styleguide/pattern.hbs) template, for example:
 
 `index.html`:
 
@@ -110,7 +112,7 @@ developer_notes: This is additional information
   {{developer_notes}}
 {{/if}}
 ```
-***
+
 
 ## Dom Matching
 
@@ -118,74 +120,78 @@ The annotation needs to placed in a particular location for the markup pattern t
 
 @todo
 
+***
+
 ## Fields
 
 The following fields have special use within the system:
 
 - ### `title`
 
-| --- | --- |
-| Description | The title of the component |
-| Required | true |
+    *Description*: The title of the component
+    
+    *Required*: true
 
-example:
+    example:
 
-```
-<!--- title: Heading 1 -->
-<h1>Heading 1</h1>
-```
+    ```
+    <!--- title: Heading 1 -->
+    <h1>Heading 1</h1>
+    ```
 
 
 - ### `group`
 
-| --- | --- |
-| Description | The group the component belongs to |
-| Default | The name of the file the component is defined in |
+    *Description*: The group the component belongs to
 
-For example, if the annotation is made for HTML elements in a file named `forms.html`, the group would be "forms".
+    *Default*: The name of the file the component is defined in
 
-The group mainly impacts that navigation.
+    For example, if the annotation is made for HTML elements in a file named `forms.html`, the group would be "forms".
 
-```
-<!---
-title: Heading 1
-group: Typography
--->
-<h1>Heading 1</h1>
-```
+    The group mainly impacts the navigation.
+
+    ```
+    <!---
+    title: Heading 1
+    group: Typography
+    -->
+    <h1>Heading 1</h1>
+    ```
 
 - ### `type`
 
-| --- | --- |
-| Description | The type of component being annotated |
-| Options | `component` or `template` |
-| Default | `component` |
+    *Description*: The type of component being annotated
+    
+    *Options*: `component` or `template`
+    
+    *Default*: `component`
 
-Both individual components and examples templates that contain collections of components can be annotated.  By specifying the `type` as `template`, HTMLDoc will:
+    Both individual components and example templates that contain collections of components can be annotated.  By specifying the `type` as `template`, HTMLDoc will:
 
-- Ignore all other annotations within the file so that duplications of components aren't made.
-- Not match any HTML to the component - it will use all HTML within the file to produce the pattern.
+    - Ignore all other annotations within the file so that duplications of components aren't made.
+    - Not match any HTML to the component - it will use all HTML within the file to produce the pattern.
 
-For example [this example](http://koded.github.io/htmldoc-example-bootstrap/examples-jumbotrons-example-1.html) shows a full page template with the annotation from the [source file](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/www/jumbotron/index.html#L31).
+    [This example](http://koded.github.io/htmldoc-example-bootstrap/examples-jumbotrons-example-1.html) shows a full page template with the annotation from the [source file](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/www/jumbotron/index.html#L31).
 
 - ### `external`
 
-| --- | --- |
-| Description | Determine whether the component should be showed on an external page, outside of the style guide  |
-| Options | `true` or `false` |
-| Default | `false` |
+    *Description*: Determine whether the component should be showed on an external page, outside of the style guide
 
-Some components lend themselves to be shown on a separate page, outside of the style guide theme.  Setting this field to `true` will ensure that a component page will be generated using a [`wrapper-external.hbs`](https://github.com/Koded/htmldoc-bootstrap-styleguide-theme/blob/master/wrapper-external.hbs) template so that the developer of the style guide can decide how to show the component without any of the style guide theme.
+    *Options*: `true` or `false`
 
-The page can be referenced in the [`pattern.hbs`](https://github.com/Koded/htmldoc-bootstrap-styleguide-theme/blob/master/pattern.hbs) template using the `url-external` Handlebars helper, e.g.:
+    *Default*: `false`
 
-```
-  {{#if external}}
-  <h2>View <a href="{{ url-external this }}">{{title}}</a>.</h2>
-  {{/if}}
-```
+    Some components lend themselves to be shown on a separate page, outside of the style guide theme.  Setting this field to `true` will ensure that a component page will be generated using a [`wrapper-external.hbs`](https://github.com/Koded/htmldoc-bootstrap-styleguide-theme/blob/master/wrapper-external.hbs) template so that the developer of the style guide can decide how to show the component without any of the style guide theme.
 
-An example of this in use can be found [here](http://koded.github.io/htmldoc-example-bootstrap/examples-jumbotrons-example-1.html).
+    The page can be referenced in the [`pattern.hbs`](https://github.com/Koded/htmldoc-bootstrap-styleguide-theme/blob/master/pattern.hbs) template using the `url-external` Handlebars helper, e.g.:
+
+    ```
+    {{#if external}}
+    <h2>View <a href="{{ url-external this }}">{{title}}</a>.</h2>
+    {{/if}}
+    ```
+
+    An example of this in use can be found [here](http://koded.github.io/htmldoc-example-bootstrap/examples-jumbotrons-example-1.html).
 
 ## External values
 
@@ -193,36 +199,37 @@ Values for fields can be loaded from external sources. This is useful for when y
 
 - ### `file://`
 
-Read content from a file within the filesystem.
+    Read content from a file within the filesystem.
 
-example:
+    example:
 
-```
-<!---
-title: Modal
-group: Javascript
-usage: file://docs/typography.md
--->
-<h1>Heading 1</h1>
-...
-```
-Within the filesystem the contents of `./doc/typography.md` would be used as the value for the `usage` field.
+    ```
+    <!---
+    title: Modal
+    group: Javascript
+    usage: file://docs/typography.md
+    -->
+    <h1>Heading 1</h1>
+    ...
+    ```
+     
+    Within the filesystem the contents of `./doc/typography.md` would be used as the value for the `usage` field.
 
 - ### `http://`
 
-The same as above, but reading a file from an HTTP source.
+     The same as above, but reading a file from an HTTP source.
 
-example:
+     example:
 
-```
-<!---
-title: Modal
-group: Javascript
-usage: https://www.dropbox.com/s/vzrg6sj3uddj4p1/Typography.md
--->
-<h1>Heading 1</h1>
-...
-```
+    ```
+    <!---
+    title: Modal
+    group: Javascript
+    usage: https://www.dropbox.com/s/vzrg6sj3uddj4p1/Typography.md
+    -->
+    <h1>Heading 1</h1>
+    ...
+    ```
 
 ### Behavioural Specifications
 
@@ -254,77 +261,67 @@ An example can be found [here](https://github.com/Koded/htmldoc-example-bootstra
 
 - ### `publish`
 
-| --- | --- |
-| Description | The directory the generated style guide files should be saved into  |
-| Default | `publish` |
+     *Description*: The directory the generated style guide files should be saved into.
+     
+     *Default*: `publish`
 
 - ### `templates`
 
-| --- | --- |
-| Description | The directory which contains the Handlebar templates for the style guide theme |
+    *Description*: The directory which contains the Handlebar templates for the style guide theme.
 
 - ### `template_assets`
 
-| --- | --- |
-| Description | The directory within the `templates` folder which contains the theming assets (CSS / JS etc.) |
+    *Description*: The directory within the `templates` folder which contains the theming assets (CSS / JS etc.).
 
 - ### `files`
 
-| --- | --- |
-| Description | An array of objects defining where the source files containing the annotations are |
+    *Description*: An array of objects defining where the source files containing the annotations are.
 
-example:
+    example:
 
-```
-files:
-  - category: Components
-    files: ['./**/*.html']
-  - category: Examples
-    files: ['./www/jumbotron/**/*.html',
-      './www/dashboard/**/*.html']
-```
+    ```
+    files:
+      - category: Components
+        files: ['./**/*.html']
+      - category: Examples
+        files: ['./www/jumbotron/**/*.html', './www/dashboard/**/*.html']
+    ```
 
 - #### `files.category`
 
-| --- | --- |
-| Description | The name that will be used for the category of components in the navigation for the components found in the files |
+    *Description*: The name that will be used for the category of components in the navigation for the components found in the files.
 
 - #### `files.files`
 
-| --- | --- |
-| Description | [Globbing](https://github.com/isaacs/node-glob) patterns that define the files that contain components |
+    *Description*: [Globbing](https://github.com/isaacs/node-glob) patterns that define the files that contain components.
 
 - ### `pages`
 
-| --- | --- |
-| Description | An array of static 'page' files that can be added to the main navigation so that instructions, download guides etc. can be included within your style guide.  |
+    *Description*: An array of static 'page' files that can be added to the main navigation so that instructions, download guides etc. can be included within your style guide.
 
-Here is an [example](http://koded.github.io/htmldoc-example-bootstrap/page-getting-started.html) which is generated from this [source file](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/getting-started.md).
+	Here is an [example](http://koded.github.io/htmldoc-example-bootstrap/page-getting-started.html) which is generated from this [source file](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/getting-started.md).
 
-example:
+	example:
 
-```
-pages:
-  - index:    true
-    src:      ./index.md
-  - title:    Getting Started
-    src:      ./getting-started.md
-```
+	```
+	pages:
+	  - index:    true
+	    src:      ./index.md
+	  - title:    Getting Started
+	    src:      ./getting-started.md
+	```
 
 - #### `pages.index`
 
-| --- | --- |
-| Description | One page can be set as the index page for the style guide by setting this to `true` and omitting the `title` field  |
+	*Description*: One page can be set as the index page for the style guide by setting this to `true` and omitting the `title` field.
 
 - #### `pages.src`
 
-| --- | --- |
-| Description | The source file for the page (markdown can be used) |
+    *Description*: The source file for the page (markdown can be used).
 
 - #### `pages.title`
 
-| --- | --- |
-| Description | The name of link to the page in the navigation |
+    *Description*: The name of link to the page in the navigation.
 
 ## Commandline Options
 
@@ -347,7 +344,6 @@ The following templates are required:
 - #### wrapper.hbs
 
 - #### wrapper-external.hbs
-
 
 
 ## Handlebar Helpers
