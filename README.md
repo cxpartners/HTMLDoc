@@ -124,7 +124,7 @@ The following fields have special use within the system:
 
 - ### `title`
 
-|=|=|
+| --- | --- |
 | Description | The title of the component |
 | Required | true |
 
@@ -138,7 +138,7 @@ example:
 
 - ### `group`
 
-|=|=|
+| --- | --- |
 | Description | The group the component belongs to |
 | Default | The name of the file the component is defined in |
 
@@ -156,7 +156,7 @@ group: Typography
 
 - ### `type`
 
-|=|=|
+| --- | --- |
 | Description | The type of component being annotated |
 | Options | `component` or `template` |
 | Default | `component` |
@@ -170,7 +170,7 @@ For example [this example](http://koded.github.io/htmldoc-example-bootstrap/exam
 
 - ### `external`
 
-|-|-|
+| --- | --- |
 | Description | Determine whether the component should be showed on an external page, outside of the style guide  |
 | Options | `true` or `false` |
 | Default | `false` |
@@ -254,23 +254,23 @@ An example can be found [here](https://github.com/Koded/htmldoc-example-bootstra
 
 - ### `publish`
 
-|=|=|
+| --- | --- |
 | Description | The directory the generated style guide files should be saved into  |
 | Default | `publish` |
 
 - ### `templates`
 
-|=|=|
+| --- | --- |
 | Description | The directory which contains the Handlebar templates for the style guide theme |
 
 - ### `template_assets`
 
-|=|=|
+| --- | --- |
 | Description | The directory within the `templates` folder which contains the theming assets (CSS / JS etc.) |
 
 - ### `files`
 
-|=|=|
+| --- | --- |
 | Description | An array of objects defining where the source files containing the annotations are |
 
 example:
@@ -286,17 +286,17 @@ files:
 
 - #### `files.category`
 
-|=|=|
+| --- | --- |
 | Description | The name that will be used for the category of components in the navigation for the components found in the files |
 
 - #### `files.files`
 
-|=|=|
+| --- | --- |
 | Description | [Globbing](https://github.com/isaacs/node-glob) patterns that define the files that contain components |
 
 - ### `pages`
 
-|=|=|
+| --- | --- |
 | Description | An array of static 'page' files that can be added to the main navigation so that instructions, download guides etc. can be included within your style guide.  |
 
 Here is an [example](http://koded.github.io/htmldoc-example-bootstrap/page-getting-started.html) which is generated from this [source file](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/getting-started.md).
@@ -313,17 +313,17 @@ pages:
 
 - #### `pages.index`
 
-|=|=|
+| --- | --- |
 | Description | One page can be set as the index page for the style guide by setting this to `true` and omitting the `title` field  |
 
 - #### `pages.src`
 
-|=|=|
+| --- | --- |
 | Description | The source file for the page (markdown can be used) |
 
 - #### `pages.title`
 
-|=|=|
+| --- | --- |
 | Description | The name of link to the page in the navigation |
 
 ## Commandline Options
