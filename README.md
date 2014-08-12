@@ -1,5 +1,7 @@
 # HTMLDoc
 
+![Travis CI](https://api.travis-ci.org/Koded/HTMLDoc.svg?branch=master)
+
 HTMLDoc is a tool to create [styleguides](http://koded.github.io/htmldoc-example-bootstrap/) but annotating markup using
 HTML comments.
 
@@ -12,7 +14,7 @@ For example:
 
 Note the triple dashes in the opening comment tag - this specifies the comment as an HTMLDoc comment.
 
-# Installation
+## Installation
 
 Install from Github repo (not on NPM yet):
 
@@ -31,7 +33,7 @@ For options:
     $ htmldoc --help
 
 
-# Getting Started
+## Getting Started
 
 - Install HTMLDoc as outlined above
 - Checkout an example styleguide wrapper at https://github.com/Koded/htmldoc-bootstrap-styleguide-theme
