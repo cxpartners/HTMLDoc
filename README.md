@@ -2,7 +2,7 @@
 
 ![Travis CI](https://api.travis-ci.org/Koded/HTMLDoc.svg?branch=master)
 
-HTMLDoc is a tool to create [styleguides](http://koded.github.io/htmldoc-example-bootstrap/) but annotating markup using
+HTMLDoc is a tool to create [styleguides](http://koded.github.io/htmldoc-example-bootstrap/) by annotating markup using
 HTML comments.
 
 For example:
