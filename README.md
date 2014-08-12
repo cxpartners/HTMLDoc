@@ -170,7 +170,7 @@ For example [this example](http://koded.github.io/htmldoc-example-bootstrap/exam
 
 - ### `external`
 
-|=|=|
+|-|-|
 | Description | Determine whether the component should be showed on an external page, outside of the style guide  |
 | Options | `true` or `false` |
 | Default | `false` |
