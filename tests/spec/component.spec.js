@@ -29,6 +29,21 @@ describe("Components", function() {
 
   });
 
+  it("should support any user defined fields", function() {
+
+    htmldocDom = '- title: Typography\n' +
+      'group: Theme\n' +
+      'myfield1: field1\n' +
+      'myfield2: field2\n';
+
+    component = new Component(content, htmldocDom, 'components', '', fullHtml);
+
+    expect(component.myfield1).toBe('field1');
+    expect(component.myfield2).toBe('field2');
+
+  });
+
+
   it("should not validate if 'title' is not set", function() {
     htmldocDom = '- group: Theme';
 
