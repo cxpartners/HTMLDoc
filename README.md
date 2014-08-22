@@ -39,7 +39,7 @@ devnotes: >
 </p>
 ```
 
-Which will give you something [like this](http://koded.github.io/htmldoc-example-bootstrap/components-theme-buttons.html).
+Which will give you something [like this](http://cxpartners.github.io/htmldoc-example-bootstrap/components-theme-buttons.html).
 
 The comment is placed adjacent (in DOM terms) to the element that contains the component you wish to include in the style guide.
 
@@ -63,15 +63,15 @@ to be duplicated (in the pattern library itself and source code of the project i
 
 Install from Github repo (not on NPM yet):
 
-    $ npm install -g git+https://github.com/Koded/HTMLDoc.git
+    $ npm install -g git+https://github.com/cxpartners/HTMLDoc.git
 
-Checkout example project at https://github.com/Koded/htmldoc-example-bootstrap, then run `HTMLDoc`:
+Checkout example project at https://github.com/cxpartners/htmldoc-example-bootstrap, then run `HTMLDoc`:
 
     $ htmldoc --preview
 
 
 A webserver will be running on `localhost:3000` and the built project will be in `publish` (see configuration file at
-https://github.com/Koded/htmldoc-example-bootstrap/blob/master/htmldoc.yaml).
+https://github.com/cxpartners/htmldoc-example-bootstrap/blob/master/htmldoc.yaml).
 
 For options:
 
@@ -81,9 +81,9 @@ For options:
 # Getting Started
 
 - Install HTMLDoc as outlined above
-- Checkout an example styleguide wrapper at https://github.com/Koded/htmldoc-bootstrap-styleguide-theme
+- Checkout an example styleguide wrapper at https://github.com/cxpartners/htmldoc-bootstrap-styleguide-theme
 - Add HTMLDoc comments to your code
-- Create a `htmldoc.yaml` configuration file (yet to be documented see [here](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/htmldoc.yaml) for an example)
+- Create a `htmldoc.yaml` configuration file (yet to be documented see [here](https://github.com/cxpartners/htmldoc-example-bootstrap/blob/master/htmldoc.yaml) for an example)
 - Run `htmldoc` on the command line, from the same directory as the `htmldoc.yaml` file
 
 The built styleguide will be placed in a `./publish` folder.
@@ -92,7 +92,7 @@ The built styleguide will be placed in a `./publish` folder.
 
 With the exception of a set of reserved field names, HTMLDoc annotations are schemaless, i.e. they can have varying numbers of fields, and different types for each field.
 
-All fields are made available within the [`pattern.hbs`](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/styleguide/pattern.hbs) template, for example:
+All fields are made available within the [`pattern.hbs`](https://github.com/cxpartners/htmldoc-example-bootstrap/blob/master/styleguide/pattern.hbs) template, for example:
 
 `index.html`:
 
@@ -171,7 +171,7 @@ The following fields have special use within the system:
     - Ignore all other annotations within the file so that duplications of components aren't made.
     - Not match any HTML to the component - it will use all HTML within the file to produce the pattern.
 
-    [This example](http://koded.github.io/htmldoc-example-bootstrap/examples-jumbotrons-example-1.html) shows a full page template with the annotation from the [source file](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/www/jumbotron/index.html#L31).
+    [This example](http://cxpartners.github.io/htmldoc-example-bootstrap/examples-jumbotrons-example-1.html) shows a full page template with the annotation from the [source file](https://github.com/cxpartners/htmldoc-example-bootstrap/blob/master/www/jumbotron/index.html#L31).
 
 - ### `external`
 
@@ -181,9 +181,9 @@ The following fields have special use within the system:
 
     *Default*: `false`
 
-    Some components lend themselves to be shown on a separate page, outside of the style guide theme.  Setting this field to `true` will ensure that a component page will be generated using a [`wrapper-external.hbs`](https://github.com/Koded/htmldoc-bootstrap-styleguide-theme/blob/master/wrapper-external.hbs) template so that the developer of the style guide can decide how to show the component without any of the style guide theme.
+    Some components lend themselves to be shown on a separate page, outside of the style guide theme.  Setting this field to `true` will ensure that a component page will be generated using a [`wrapper-external.hbs`](https://github.com/cxpartners/htmldoc-bootstrap-styleguide-theme/blob/master/wrapper-external.hbs) template so that the developer of the style guide can decide how to show the component without any of the style guide theme.
 
-    The page can be referenced in the [`pattern.hbs`](https://github.com/Koded/htmldoc-bootstrap-styleguide-theme/blob/master/pattern.hbs) template using the `url-external` Handlebars helper, e.g.:
+    The page can be referenced in the [`pattern.hbs`](https://github.com/cxpartners/htmldoc-bootstrap-styleguide-theme/blob/master/pattern.hbs) template using the `url-external` Handlebars helper, e.g.:
 
     ```
     {{#if external}}
@@ -191,7 +191,7 @@ The following fields have special use within the system:
     {{/if}}
     ```
 
-    An example of this in use can be found [here](http://koded.github.io/htmldoc-example-bootstrap/examples-jumbotrons-example-1.html).
+    An example of this in use can be found [here](http://cxpartners.github.io/htmldoc-example-bootstrap/examples-jumbotrons-example-1.html).
 
 ## External values
 
@@ -235,7 +235,7 @@ Values for fields can be loaded from external sources. This is useful for when y
 
 An example of where external files can be put to good use is by pulling Gherkin feature files into the style guide, so that behavioural specifications can be added to components which have interactions.
 
-An example can be seen [here](http://koded.github.io/htmldoc-example-bootstrap/components-javascript-modal.html) and uses the following annotations:
+An example can be seen [here](http://cxpartners.github.io/htmldoc-example-bootstrap/components-javascript-modal.html) and uses the following annotations:
 
 ```
 <!---
@@ -248,14 +248,14 @@ devnotes: >
 -->
 ```
 
-In this case the file [`spec/modal.feature`](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/spec/modal.feature) contains the specification for the modal popup.
+In this case the file [`spec/modal.feature`](https://github.com/cxpartners/htmldoc-example-bootstrap/blob/master/spec/modal.feature) contains the specification for the modal popup.
 
 
 # Configuration
 
 The HTMLDoc tool is run in the same directory as a `htmldoc.yaml` file which defines how it should be run.
 
-An example can be found [here](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/htmldoc.yaml).
+An example can be found [here](https://github.com/cxpartners/htmldoc-example-bootstrap/blob/master/htmldoc.yaml).
 
 ## ``htmldoc.yaml`` Configuration File Options
 
@@ -299,7 +299,7 @@ An example can be found [here](https://github.com/Koded/htmldoc-example-bootstra
 
     *Description*: An array of static 'page' files that can be added to the main navigation so that instructions, download guides etc. can be included within your style guide.
 
-	Here is an [example](http://koded.github.io/htmldoc-example-bootstrap/page-getting-started.html) which is generated from this [source file](https://github.com/Koded/htmldoc-example-bootstrap/blob/master/getting-started.md).
+	Here is an [example](http://cxpartners.github.io/htmldoc-example-bootstrap/page-getting-started.html) which is generated from this [source file](https://github.com/cxpartners/htmldoc-example-bootstrap/blob/master/getting-started.md).
 
 	example:
 
@@ -331,7 +331,7 @@ Run `htmldoc --help` to view commandline options.
 
 HTMLDoc uses Handlebars for the templating system of the style guide.
 
-An example theme based on [Twitter's Bootstrap](http://getbootstrap.com/) can be found at https://github.com/Koded/htmldoc-bootstrap-styleguide-theme.
+An example theme based on [Twitter's Bootstrap](http://getbootstrap.com/) can be found at https://github.com/cxpartners/htmldoc-bootstrap-styleguide-theme.
 
 By design, the style guide templates are considered to be contained within a folder within the source code repository, i.e. a template for each project you undertake is expected.
 
