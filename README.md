@@ -197,7 +197,7 @@ The following fields have special use within the system:
 
 Values for fields can be loaded from external sources. This is useful for when you want to pull in additional information that isn't really suited to be defined in markup.
 
-- ### `file://`
+- ### `content:file://`
 
     Read content from a file within the filesystem.
 
@@ -207,7 +207,7 @@ Values for fields can be loaded from external sources. This is useful for when y
     <!---
     title: Modal
     group: Javascript
-    usage: file://docs/typography.md
+    usage: content:file://docs/typography.md
     -->
     <h1>Heading 1</h1>
     ...
@@ -215,7 +215,7 @@ Values for fields can be loaded from external sources. This is useful for when y
      
     Within the filesystem the contents of `./doc/typography.md` would be used as the value for the `usage` field.
 
-- ### `http://`
+- ### `content:http://`
 
      The same as above, but reading a file from an HTTP source.
 
@@ -225,7 +225,7 @@ Values for fields can be loaded from external sources. This is useful for when y
     <!---
     title: Modal
     group: Javascript
-    usage: https://www.dropbox.com/s/vzrg6sj3uddj4p1/Typography.md
+    usage: content:https://www.dropbox.com/s/vzrg6sj3uddj4p1/Typography.md
     -->
     <h1>Heading 1</h1>
     ...
