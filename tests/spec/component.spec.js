@@ -91,7 +91,7 @@ describe("Components", function() {
 
     htmldocDom = '- title: Typography\n' +
       'group: Theme\n' +
-      'spec: https://github.com/';
+      'spec: content:https://github.com/';
 
     component = new Component(content,  htmldocDom, 'components', 'my group', fullHtml);
 
@@ -109,7 +109,7 @@ describe("Components", function() {
 
     htmldocDom = '- title: Typography\n' +
       'group: Theme\n' +
-      'spec: https://github.com/';
+      'spec: content:https://github.com/';
 
     expect(function() {
       component = new Component(content,  htmldocDom, 'components', 'my group', fullHtml);
@@ -120,7 +120,7 @@ describe("Components", function() {
 
     htmldocDom = '- title: Typography\n' +
       'group: Theme\n' +
-      'spec: file://tests/fixtures/external-sources/test-1.txt';
+      'spec: content:file://tests/fixtures/external-sources/test-1.txt';
 
     component = new Component(content,  htmldocDom, 'components', 'my group', fullHtml);
 
@@ -131,7 +131,7 @@ describe("Components", function() {
 
     htmldocDom = '- title: Typography\n' +
       'group: Theme\n' +
-      'spec: file://file-does-not-exist.txt';
+      'spec: content:file://file-does-not-exist.txt';
 
     expect(function() {
       component = new Component(content,  htmldocDom, 'components', 'my group', fullHtml);
