@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 
+var path = require('path');
+
 /*
  * NPM modules
  */
 var program = require('commander');
 var yaml = require("js-yaml");
 var fs = require('fs-extra');
-var _ = require("lodash");
+var _ = require('lodash');
 
 /*
  * App modules
@@ -25,7 +27,6 @@ var packageJson = require('./package.json');
  */
 (function() {
 
-  var components = [];
   var config;
 
   program
@@ -46,7 +47,10 @@ var packageJson = require('./package.json');
     logger.log(e, logger.LOG_CRITICAL);
   }
 
-
+  /*
+   * Change to the directory the config yaml
+   */
+  process.chdir(path.dirname(configYaml));
 
   config = _.defaults(config, {
     'preview': program.preview,
