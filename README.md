@@ -197,7 +197,7 @@ The following fields have special use within the system:
 
 Values for fields can be loaded from external sources. This is useful for when you want to pull in additional information that isn't really suited to be defined in markup.
 
-- ### `content:file://`
+- ### `file://`
 
     Read content from a file within the filesystem.
 
@@ -207,7 +207,8 @@ Values for fields can be loaded from external sources. This is useful for when y
     <!---
     title: Modal
     group: Javascript
-    usage: content:file://docs/typography.md
+    usage:
+        external: file://docs/typography.md
     -->
     <h1>Heading 1</h1>
     ...
@@ -215,7 +216,7 @@ Values for fields can be loaded from external sources. This is useful for when y
      
     Within the filesystem the contents of `./doc/typography.md` would be used as the value for the `usage` field.
 
-- ### `content:http://`
+- ### `http://`
 
      The same as above, but reading a file from an HTTP source.
 
@@ -225,7 +226,8 @@ Values for fields can be loaded from external sources. This is useful for when y
     <!---
     title: Modal
     group: Javascript
-    usage: content:https://www.dropbox.com/s/vzrg6sj3uddj4p1/Typography.md
+    usage:
+        external: https://www.dropbox.com/s/vzrg6sj3uddj4p1/Typography.md
     -->
     <h1>Heading 1</h1>
     ...
@@ -241,7 +243,8 @@ An example can be seen [here](http://cxpartners.github.io/htmldoc-example-bootst
 <!---
 title: Modal
 group: Javascript
-spec: file://spec/modal.feature
+spec:
+    external: file://spec/modal.feature
 description: Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.
 devnotes: >
   *Overlapping modals not supported*: Be sure not to open a modal while another is still visible. Showing more than one modal at a time requires custom code.
