@@ -1,10 +1,10 @@
 {
   "name": "htmldoc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Styleguide Generator",
   "main": "cli.js",
   "scripts": {
-    "test": "node_modules/jasmine-node/bin/jasmine-node --verbose tests/spec/*.spec.js"
+    "test": "node_modules/jasmine-node/bin/jasmine-node --verbose tests/spec/*.spec.js --captureExceptions"
   },
   "repository":  {
     "type" : "git",
