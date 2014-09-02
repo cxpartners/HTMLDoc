@@ -35,6 +35,7 @@ var packageJson = require('./package.json');
     .option('-C, --commit', 'Commit generated files to a repo')
     .option('-p, --preview', 'Launch webserver to preview the styleguide')
     .option('-v, --verbose', 'Show additional log messages')
+    .option('-V, --version', 'Show current version')
     .parse(process.argv);
 
   var configYaml = program.config || './htmldoc.yaml';
