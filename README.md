@@ -1,6 +1,6 @@
 # HTMLDoc
 
-![Travis CI](https://api.travis-ci.org/Koded/HTMLDoc.svg?branch=master)
+[![Travis CI](https://api.travis-ci.org/Koded/HTMLDoc.svg?branch=master)](https://travis-ci.org/cxpartners/HTMLDoc)
 
 ***
 
@@ -192,6 +192,24 @@ The following fields have special use within the system:
     ```
 
     An example of this in use can be found [here](http://cxpartners.github.io/htmldoc-example-bootstrap/examples-jumbotrons-example-1.html).
+
+
+    - ### `hide`
+
+    *Description*: An array of fields to exclude from the pattern library generation
+
+     There may be situations where you want to keep fields in the original source files, but don't want them to show up in the pattern library.  By specifing such fields in the `hide` field, you ensure they are not included.
+
+    ```
+    <!---
+    title: Global Colours
+    group: Brand
+    designs: [http://www.example.com/screengrabs/patterns/1colour.jpg]
+    hide: [designs]
+    -->
+    ```
+
+	In the above example, the `designs` field will not be available to the templates, effectively hiding it in the pattern library.
 
 ## External values
 

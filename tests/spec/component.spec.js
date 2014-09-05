@@ -69,17 +69,17 @@ describe("Components", function() {
     expect(component.group).toBe('the group');
   });
 
-  it("Should have the correct filename", function() {
+  it("should have the correct filename", function() {
     component = new Component(content,  '- title: my test', 'components', 'my group', fullHtml);
     expect(component.getFilename()).toBe("components-my-group-my-test.html");
   });
 
-  it("Should have the correct filename for external components", function() {
+  it("should have the correct filename for external components", function() {
     component = new Component(content,  '- title: my test', 'components', 'my group', fullHtml);
     expect(component.getExternalFilename()).toBe("components-my-group-my-test-external.html");
   });
 
-  it("Should grab content from external http source", function() {
+  it("should grab content from external http source", function() {
 
     Component = rewire('../../lib/component.js');
     Component.__set__("request",  function() {
@@ -99,7 +99,7 @@ describe("Components", function() {
     expect(component.spec).toBe('Test Response');
   });
 
-  it("Should throw an error if it cannot get content from external http source", function() {
+  it("should throw an error if it cannot get content from external http source", function() {
 
     Component = rewire('../../lib/component.js');
     Component.__set__("request",  function() {
@@ -118,7 +118,7 @@ describe("Components", function() {
     }).toThrow();
   });
 
-  it("Should grab content from file", function() {
+  it("should grab content from file", function() {
 
     htmldocDom = '- title: Typography\n' +
       'group: Theme\n' +
@@ -130,7 +130,7 @@ describe("Components", function() {
     expect(component.spec).toBe('This is an external source of content.');
   });
 
-  it("Should throw an error if it cannot get content from external file", function() {
+  it("should throw an error if it cannot get content from external file", function() {
 
     htmldocDom = '- title: Typography\n' +
       'group: Theme\n' +
@@ -142,6 +142,16 @@ describe("Components", function() {
     }).toThrow("Error: Could not fetch external content from file-does-not-exist.txt\n" +
       "<h1>Test</h1>\n" +
       "");
+  });
+
+  it("should not include hidden elements", function() {
+    htmldocDom = '- title: Typography\n' +
+      'group: Theme\n' +
+      'myfield: test\n' +
+      'hide: [myfield]';
+
+    component = new Component(content, htmldocDom, 'components', '', fullHtml);
+    expect(component.myfield).toBeUndefined();
   });
 
 });
