@@ -63,7 +63,7 @@ to be duplicated (in the pattern library itself and source code of the project i
 
 Install from Github repo (not on NPM yet):
 
-    $ npm install -g git+https://github.com/cxpartners/HTMLDoc.git
+    $ npm install -g cxpartners/HTMLDoc
 
 Checkout example project at https://github.com/cxpartners/htmldoc-example-bootstrap, then run `HTMLDoc`:
 
