@@ -194,7 +194,7 @@ The following fields have special use within the system:
     An example of this in use can be found [here](http://cxpartners.github.io/htmldoc-example-bootstrap/examples-jumbotrons-example-1.html).
 
 
-    - ### `hide`
+- ### `hide`
 
     *Description*: An array of fields to exclude from the pattern library generation
 
