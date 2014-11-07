@@ -13,7 +13,7 @@
   "bin": {
     "htmldoc": "cli.js"
   },
-  "author": "",
+  "author": "Jon Brace",
   "license": "ISC",
   "devDependencies": {
     "jasmine-node": "1.14.5",
