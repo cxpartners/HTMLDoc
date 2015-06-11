@@ -384,8 +384,8 @@ li {
   font-style: normal; }
 @font-face {
   font-family: "kievit-bold";
-  src: url(/assets/fonts/KievitWeb-black.eot);
-  src: url(/assets/fonts/KievitWeb-black.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/KievitWeb-black.woff) format("woff"), url(/assets/fonts/KievitWeb-black.ttf) format("truetype"), url(/assets/fonts/KievitWeb-black.svg#fontcustom) format("svg");
+  src: url(/assets/fonts/KievitWeb-Black.eot);
+  src: url(/assets/fonts/KievitWeb-Black.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/KievitWeb-Black.woff) format("woff"), url(/assets/fonts/KievitWeb-Black.ttf) format("truetype"), url(/assets/fonts/KievitWeb-Black.svg#fontcustom) format("svg");
   font-weight: normal;
   font-style: normal; }
 body {
