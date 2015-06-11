@@ -1,0 +1,91 @@
+.header__inner {
+  position: relative;
+  height: 80px;
+  @media screen and (min-width: $screen-sm) {
+    height: 100px;
+  }
+}
+
+.heading {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  a {
+    color: $darkgrey;
+    text-decoration: none;
+  }
+  @media screen and (max-width: $screen-s) {
+    font-size: 1.5rem;
+  }
+}
+
+.logo {
+  position: absolute;
+  bottom: 16px;
+  right: 15px;
+  max-width: 170px;
+  @media screen and (max-width: $screen-xs) {
+    bottom: 16px;
+    max-width: 140px;
+  }
+  @media screen and (min-width: $screen-sm) {
+    bottom: 20px;
+    max-width: 200px;
+  }
+}
+
+.top-content {
+  color: $white;
+  background-color: $darkgrey;
+  padding: 20px 0 40px;
+  @media screen and (min-width: $screen-md) {
+    padding: 50px 0;
+  }
+}
+
+.top-content__header {
+  margin-bottom: 20px;
+}
+
+.top-content__list {
+  color: $lightgrey;
+  font-size: 1rem;
+  line-height: 1.5;
+  @media screen and (min-width: $screen-sm) {
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+}
+
+.top-content__list__item {
+  padding-left: 1em;
+  text-indent: -1em;
+  @media screen and (min-width: $screen-sm) {
+    padding-left: .9em;
+    text-indent: -.9em;
+  }
+
+  &:before {
+    content: '\25CF';
+    position: relative;
+    bottom: 4px;
+    font-size: .5rem;
+    padding-right: 10px;
+  }
+}
+
+.top-content__header {
+  color: $white;
+}
+
+.diagram {
+  width: 100%;
+  max-width: 400px;
+  padding-top: 40px;
+  @media screen and (min-width: $screen-sm) {
+    padding-top: 70px;
+  }
+  @media screen and (min-width: $screen-md) {
+    padding-top: 30px;
+  }
+}

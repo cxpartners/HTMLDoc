@@ -1,0 +1,157 @@
+.main-content {
+  padding: 20px 0;
+  @media screen and (min-width: $screen-sm) {
+    overflow: hidden;
+    padding: 20px 0 40px;
+  }
+}
+
+.constrained {
+  position: relative;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 15px;
+  @extend %cf;
+}
+
+
+.col {
+  @media screen and (min-width: $screen-sm) {
+    float: left;
+    box-sizing: border-box;
+  }
+}
+
+.col--half {
+  @media screen and (min-width: $screen-sm) {
+    width: 50%;
+    padding-right: 50px;
+  }
+}
+
+.col--main, {
+  @media screen and (min-width: $screen-sm) {
+    padding-right: 380px;
+  }
+  @media screen and (min-width: $screen-md) {
+    padding-right: 410px;
+  }
+}
+
+
+.col--side {
+  @media screen and (min-width: $screen-sm) {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 330px;
+  }
+}
+
+.col--bottom {
+  padding-top: 20px;
+  @media screen and (min-width: $screen-sm) {
+    padding-top: 40px;
+  }
+}
+
+blockquote {
+  margin: 30px 0 30px;
+  padding-left: 15px;
+  border-left: 10px solid $vlightgrey;
+  p {
+    margin-bottom: 10px;
+  }
+  @media screen and (min-width: $screen-sm) {
+    margin-top: 20px;
+  }
+}
+
+cite {
+  @extend %micro;
+  font-style: normal;
+}
+
+.block-list {
+  margin: 20px 0;
+  @media screen and (min-width: $screen-sm) {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 30px 0;
+    margin: 20px -30px;
+  }
+}
+
+.block-list__item {
+  color: $midgrey;
+  background: $lightblue;
+  margin-bottom: 20px;
+  @media screen and (min-width: $screen-sm) {
+    display: table-cell;
+    width: 25%;
+    margin-bottom: 0;
+  }
+
+  p {
+    padding: 35px 30px;
+    margin: 0;
+  }
+
+  &:first-child {
+    p {
+      margin-left: 0;
+    }
+  }
+
+  &:nth-child(2) {
+    background: lighten($lightblue, 3);
+  }
+
+  &:nth-child(3) {
+    background: lighten($lightblue, 5);
+  }
+
+  &:nth-child(4) {
+    background: lighten($lightblue, 7);
+  }
+}
+
+.btn {
+  display: block;
+  color: $white;
+  background: $darkblue;
+  font-family: "kievit-bold", Arial, sans-serif;
+  padding: 20px;
+  margin: 30px 0;
+  text-align: center;
+  font-size: 1.4rem;
+
+  span {
+    &:after {
+      background-image: url(/assets/img/arrow.png);
+      background-size: 22px 17px;
+      background-repeat: no-repeat;
+      background-position: 10px 0;
+      content: '';
+      padding-left: 33px;
+      height: 17px;
+      width: 22px;
+    }
+  }
+
+  &:hover {
+    background: saturate($darkblue, 50);
+    text-decoration: none;
+  }
+
+  &:active {
+    position: relative;
+    bottom: -1px;
+  }
+}
+
+.align-right {
+  @media screen and (min-width: $screen-sm) {
+    text-align: right;
+  }
+}
