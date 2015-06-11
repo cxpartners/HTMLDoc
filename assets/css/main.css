@@ -378,14 +378,14 @@ li {
 
 @font-face {
   font-family: "kievit";
-  src: url("../fonts/KievitWeb.eot");
-  src: url("../fonts/KievitWeb.eot?#iefix") format("embedded-opentype"), url("../fonts/KievitWeb.woff") format("woff"), url("../fonts/KievitWeb.ttf") format("truetype"), url("../fonts/KievitWeb.svg#fontcustom") format("svg");
+  src: url(../fonts/KievitWeb.eot);
+  src: url(../fonts/KievitWeb.eot?#iefix) format("embedded-opentype"), url(../fonts/KievitWeb.woff) format("woff"), url(../fonts/KievitWeb.ttf) format("truetype"), url(../fonts/KievitWeb.svg#fontcustom) format("svg");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: "kievit-bold";
-  src: url("../fonts/KievitWeb-black.eot");
-  src: url("../fonts/KievitWeb-black.eot?#iefix") format("embedded-opentype"), url("../fonts/KievitWeb-black.woff") format("woff"), url("../fonts/KievitWeb-black.ttf") format("truetype"), url("../fonts/KievitWeb-black.svg#fontcustom") format("svg");
+  src: url(../fonts/KievitWeb-black.eot);
+  src: url(../fonts/KievitWeb-black.eot?#iefix) format("embedded-opentype"), url(../fonts/KievitWeb-black.woff) format("woff"), url(../fonts/KievitWeb-black.ttf) format("truetype"), url(../fonts/KievitWeb-black.svg#fontcustom) format("svg");
   font-weight: normal;
   font-style: normal; }
 body {
