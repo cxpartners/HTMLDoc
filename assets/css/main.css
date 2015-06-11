@@ -585,7 +585,7 @@ cite {
     background-image: url(../img/arrow.png);
     background-size: 22px 17px;
     background-repeat: no-repeat;
-    background-position: 10px 5px;
+    background-position: 10px 0;
     content: '';
     padding-left: 33px;
     height: 17px;
