@@ -361,6 +361,7 @@ th {
 ol, ul {
   list-style: none; }
 
+ol,
 ul,
 li {
   margin: 0;
@@ -495,9 +496,12 @@ cite {
 
 .constrained {
   position: relative;
-  max-width: 1065px;
+  max-width: 500px;
   margin: 0 auto;
   padding: 0 15px; }
+  @media screen and (min-width: 50em) {
+    .constrained {
+      max-width: 1065px; } }
 
 @media screen and (min-width: 50em) {
   .col {
