@@ -10,6 +10,7 @@ var yaml = require("js-yaml");
 var fs = require('fs-extra');
 var _ = require('lodash');
 
+
 /*
  * App modules
  */
@@ -25,39 +26,38 @@ var packageJson = require('./package.json');
 /**
  * Initialise
  */
-(function() {
 
-  var config;
+var config;
 
-  program
-    .version(packageJson.version)
-    .option('-c, --config <file>', 'set the path to the config file. defaults to ./htmldoc.yaml')
-    .option('-C, --commit', 'Commit generated files to a repo')
-    .option('-p, --preview', 'Launch webserver to preview the styleguide')
-    .option('-v, --verbose', 'Show additional log messages')
-    .option('-V, --version', 'Show current version')
-    .parse(process.argv);
+program
+  .version(packageJson.version)
+  .option('-c, --config <file>', 'set the path to the config file. defaults to ./htmldoc.yaml')
+  .option('-C, --commit', 'Commit generated files to a repo')
+  .option('-p, --preview', 'Launch webserver to preview the styleguide')
+  .option('-v, --verbose', 'Show additional log messages')
+  .option('-V, --version', 'Show current version')
+  .parse(process.argv);
 
-  var configYaml = program.config || './htmldoc.yaml';
+var configYaml = program.config || './htmldoc.yaml';
 
-  logger.verbose = program.verbose || false;
+logger.verbose = program.verbose || false;
 
-  try {
-    config = yaml.safeLoad(fs.readFileSync(configYaml, 'utf8'));
-  } catch (e) {
-    logger.log(e, logger.LOG_CRITICAL);
-  }
+try {
+  config = yaml.safeLoad(fs.readFileSync(configYaml, 'utf8'));
+} catch (e) {
+  logger.log(e, logger.LOG_CRITICAL);
+}
 
-  /*
-   * Change to the directory the config yaml
-   */
-  process.chdir(path.dirname(configYaml));
+/*
+ * Change to the directory the config yaml
+ */
+process.chdir(path.dirname(configYaml));
 
-  config = _.defaults(config, {
-    'preview': program.preview,
-    'use_git': program.commit
-  });
+config = _.defaults(config, {
+  'preview': program.preview,
+  'use_git': program.commit
+});
 
-  htmlDoc.generate(config, logger);
+htmlDoc.generate(config, logger).on('complete', function(config) {
 
-})();
+});
