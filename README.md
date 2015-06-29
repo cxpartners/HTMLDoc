@@ -1,6 +1,6 @@
 # HTMLDoc
 
-[![Travis CI](https://api.travis-ci.org/cxpartners/HTMLDoc.svg?branch=master)](https://travis-ci.org/cxpartners/HTMLDoc)
+[![Travis CI](https://api.travis-ci.org/cxpartners/HTMLDoc.svg)](https://travis-ci.org/cxpartners/HTMLDoc)
 
 ***
 
