@@ -358,7 +358,7 @@ Run `htmldoc --help` to view commandline options.
 
 HTMLDoc uses Handlebars for the templating system of the style guide.
 
-An example theme based on [Twitter's Bootstrap](http://getbootstrap.com/) can be found at ()[https://github.com/cxpartners/htmldoc-bootstrap-styleguide-theme].
+An example theme based on [Twitter's Bootstrap](http://getbootstrap.com/) can be found at [](https://github.com/cxpartners/htmldoc-bootstrap-styleguide-theme).
 
 By design, the style guide templates are considered to be contained within a folder in the source code repository, i.e. a template for each project you undertake is expected.
 
